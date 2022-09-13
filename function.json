@@ -1,0 +1,24 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "events",
+      "direction": "in",
+      "eventHubName": "<eventhubname>",
+      "connection": "EventHubEndPointConnection",
+      "cardinality": "many",
+      "consumerGroup": "<eventhubname_consumer_group>",
+      "dataType": "binary"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "<cosmos_database_name>",
+      "collectionName": "<cosmos_collection_name>",
+      "createIfNotExists": false,
+      "connectionStringSetting": "CosmosDBEndpointConnection"
+    }
+  ]
+}
